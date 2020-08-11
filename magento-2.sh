@@ -11,9 +11,6 @@ sudo sed -i 's/memory_limit = 128M/memory_limit = 256M/g' /etc/php/7.2/apache2/p
 sudo sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 100M/g' /etc/php/7.2/apache2/php.ini
 sudo sed -i 's/max_execution_time = 30/max_execution_time = 360/g' /etc/php/7.2/apache2/php.ini
 sudo systemctl restart apache2
-#sudo mysql -u root -proot -e "create database magento_db;"
-#sudo mysql -u root -proot -e "GRANT ALL ON magento_db.* TO 'magento_user'@'localhost' IDENTIFIED BY 'magento' WITH GRANT OPTION;"
-#sudo mysql -u root -proot -e "FLUSH PRIVILEGES;"
 
 sudo mkdir /home/magento
 sudo useradd -d /home/magento -s /bin/bash magento
@@ -21,7 +18,7 @@ sudo chown -R magento:magento /home/magento
 sudo sed -i 's/www-data/magento/g' /etc/apache2/envvars
 sudo mkdir /home/magento/public_html
 sudo mkdir /home/magento/public_html/magento
-cd /home/magento/public_html/magento && sudo tar -xvf /home/ubuntu/magento-ce-2.3.5-p1-2020-04-24-08-46-10.tar.gz
+cd /home/magento/public_html/magento && sudo tar -xvf /home/ubuntu/magento.tar.gz
 sudo chown -R magento:magento /home/magento
 sudo chmod -R 755 /home/magento/public_html/magento
 
@@ -30,5 +27,5 @@ sudo sed -i 's*DocumentRoot /var/www/html*DocumentRoot /home/magento/public_html
 sudo sed -i 's*<Directory /var/www/>*<Directory /home/magento/public_html/magento>*g' /etc/apache2/apache2.conf
 sudo sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 sudo systemctl restart apache2
-sudo rm /home/ubuntu/magento-ce-2.3.5-p1-2020-04-24-08-46-10.tar.gz
+sudo rm /home/ubuntu/magento.tar.gz
 sudo rm /home/ubuntu/magento-2.sh
