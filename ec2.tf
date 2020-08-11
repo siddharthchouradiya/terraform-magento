@@ -29,7 +29,7 @@ resource "aws_instance" "first" {
 
   provisioner "file" {
     source      = var.magento
-    destination = "/home/ubuntu/magento-ce-2.3.5-p1-2020-04-24-08-46-10.tar.gz" 
+    destination = "/home/ubuntu/magento.tar.gz" 
   }
   
   provisioner "file" {
