@@ -16,7 +16,7 @@ variable "ami" {
 }
 
 variable "key_name" {
-  default = "Enter Your Key Pair Name"
+  default = "Enter Your Key Pair Name without extention"
 }
 
 variable "magento" {
