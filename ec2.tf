@@ -12,7 +12,6 @@ resource "aws_instance" "first" {
   root_block_device {
     delete_on_termination = true
     encrypted             = false
-    iops                  = 100
     volume_size           = 30
     volume_type           = "gp2"
   }
