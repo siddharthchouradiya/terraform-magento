@@ -6,7 +6,7 @@ resource "aws_db_instance" "my_db" {
   engine_version         = "5.7.23"
   instance_class         = "db.t2.micro"
   port                   = 3306
-  vpc_security_group_ids   = ["${aws_security_group.first1.id}"]
+  vpc_security_group_ids   = [aws_security_group.first1.id]
   name                   = "mydb"
   identifier             = var.rds_identifier
   username               = "admin"
