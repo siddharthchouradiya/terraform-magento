@@ -20,7 +20,7 @@ variable "key_name" {
 }
 
 variable "pem_file" {
-  default = ""          #Enter complete pem file
+  default = ""          #Enter complete path of pem file
 }
 
 variable "mysql_user" {
