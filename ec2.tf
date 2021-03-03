@@ -22,7 +22,7 @@ resource "aws_instance" "first" {
     password = ""
     #copy <your_private_key>.pem to your local instance home directory
     #restrict permission: chmod 400 <your_private_key>.pem
-    private_key = file("/path/of/pem/file")
+    private_key = file(var.pem_file)
     host        = self.public_ip
   }
   
