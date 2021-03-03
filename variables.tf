@@ -23,10 +23,6 @@ variable "pem_file" {
   default = ""          #Enter complete pem file
 }
 
-variable "magento" {
-  default = ""          #Enter the path of magento tar file
-}
-
 variable "mysql_user" {
   default = ""          #Enter Your Mysql Username
 }
