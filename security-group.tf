@@ -33,8 +33,7 @@ resource "aws_security_group" "first" {
 
 resource "aws_security_group" "first1" {
   name = "first-ssh-db"
-  description = "Allowing ssh and db traffic"
-  vpc_id = "vpc-ab2c21c3"
+  description = "Allowing db traffic"
 
   ingress {
     from_port = 3306
