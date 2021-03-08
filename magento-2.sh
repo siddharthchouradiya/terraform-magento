@@ -37,7 +37,7 @@ sudo chown -R magento:magento /home/magento
 sudo sed -i 's/www-data/magento/g' /etc/apache2/envvars
 sudo mkdir /home/magento/public_html
 sudo mkdir /home/ubuntu/.composer
-sudo echo '{"http-basic": {"repo.magento.com": {"username": "'$public_html'","password": "'$private_key"}}}' >> /home/ubuntu/.composer/auth.json
+sudo echo '{"http-basic": {"repo.magento.com": {"username": "'$public_html'","password": "'$private_key'"}}}' >> /home/ubuntu/.composer/auth.json
 sudo composer create-project -n --repository=https://repo.magento.com/ magento/project-community-edition /home/magento/public_html/magento
 sudo chown -R magento:magento /home/magento
 sudo chmod -R 755 /home/magento/public_html/magento
